@@ -140,7 +140,8 @@ Rather than passing command line parameters for every call to the Anchore CLI th
  
 
 # Scanning Images on Amazon Elastic Container Registry (ECR)
-Amazon AWS typically uses keys instead of traditional usernames & passwords. These keys consist of an access key ID and a secret access key. While it is possible to use the aws ecr get-login command to create an access token, this will expire after 12 hours so it is not appropriate for use with Anchore Engine, otherwise a user would need to update their registry credentials regularly. So when adding an Amazon ECR registry to Anchore Engine you should pass the aws_access_key_id and aws_secret_access_key. For example:
+Amazon AWS typically uses keys instead of traditional usernames & passwords. These keys consist of an access key ID and a secret access key. While it is possible to use the aws ecr get-login command to create an access token, this will expire after 12 hours so it is not appropriate for use with Anchore Engine, otherwise a user would need to update their registry credentials regularly. So when adding an Amazon ECR registry to Anchore Engine you should pass the aws_access_key_id and aws_secret_access_key. 
+For example:
 $ anchore-cli registry add /
              1234567890.dkr.ecr.us-east-1.amazonaws.com /
              MY_AWS_ACCESS_KEY_ID /
