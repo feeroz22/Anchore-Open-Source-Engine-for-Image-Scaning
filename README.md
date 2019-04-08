@@ -136,7 +136,7 @@ Rather than passing command line parameters for every call to the Anchore CLI th
 
  ![image](https://user-images.githubusercontent.com/46320181/55561541-9eee4300-56f2-11e9-8098-71f8c1b96c66.png)
 
- ![image](https://user-images.githubusercontent.com/46320181/55561550-a1e93380-56f2-11e9-93dd-f26c86c090ea.png)
+ ![image](https://user-images.githubusercontent.com/46320181/55718907-2c84a800-59fd-11e9-89e1-8a12b86670f3.png)
 
 
 # Scanning Images on Amazon Elastic Container Registry (ECR)
@@ -171,7 +171,8 @@ Add a repository to the Anchore Engine:
 ![image](https://user-images.githubusercontent.com/46320181/55704680-0c44f100-59dd-11e9-904a-675467674851.png)
 
 Add an image to the Anchore Engine:
-![image](https://user-images.githubusercontent.com/46320181/55561656-d6f58600-56f2-11e9-84c1-359eea195693.png)
+![image](https://user-images.githubusercontent.com/46320181/55718721-af593300-59fc-11e9-9392-ab5135e7b35b.png)
+
  
 # Errors:
 
@@ -181,7 +182,7 @@ Add an image to the Anchore Engine:
 
 2)	Images need to be add before passing the get parameter in command.
 
-![image](https://user-images.githubusercontent.com/46320181/55561674-df4dc100-56f2-11e9-82d3-717fd0338535.png)
+![image](https://user-images.githubusercontent.com/46320181/55718827-fd6e3680-59fc-11e9-94d8-f76df73a5e75.png)
 
  
 
