@@ -118,7 +118,7 @@ By default, the Anchore CLI will try to connect to the Anchore Engine at http://
 
 The username, password and URL for the server can be passed to the Anchore CLI using one of three methods:
 
-a.	Command Line Parameters
+## a.	Command Line Parameters
 The following command line parameters are used to configure the Anchore CLI to connect to and authenticate with the Anchore Engine.
 
 --u    TEXT   Username      eg. admin
@@ -131,13 +131,13 @@ eg.
 
 $ anchore-cli --u admin --p foobar --url http://test.example.com:8228/v1
 
-b.	Environment Variables
+## b.	Environment Variables
 Rather than passing command line parameters for every call to the Anchore CLI they can be stored as environment variables
 
- 
+ ![image](https://user-images.githubusercontent.com/46320181/55561541-9eee4300-56f2-11e9-8098-71f8c1b96c66.png)
 
+ ![image](https://user-images.githubusercontent.com/46320181/55561550-a1e93380-56f2-11e9-93dd-f26c86c090ea.png)
 
- 
 
 # Scanning Images on Amazon Elastic Container Registry (ECR)
 Amazon AWS typically uses keys instead of traditional usernames & passwords. These keys consist of an access key ID and a secret access key. While it is possible to use the aws ecr get-login command to create an access token, this will expire after 12 hours so it is not appropriate for use with Anchore Engine, otherwise a user would need to update their registry credentials regularly. So when adding an Amazon ECR registry to Anchore Engine you should pass the aws_access_key_id and aws_secret_access_key. 
@@ -153,41 +153,40 @@ In addition to supporting AWS access key credentials Anchore also supports the u
 In this case you can configure the Anchore Engine to inherit the IAM role from the EC2 instance hosting the engine.
 When launching the EC2 instance that will run the Anchore Engine you need to specify a role that includes the AmazonEC2ContainerRegistryReadOnly policy.
 
- 
+![image](https://user-images.githubusercontent.com/46320181/55561569-a9104180-56f2-11e9-84e4-271df7f5fc3c.png)
+![image](https://user-images.githubusercontent.com/46320181/55561583-ae6d8c00-56f2-11e9-981f-169c2b078cde.png)
+![image](https://user-images.githubusercontent.com/46320181/55561592-b62d3080-56f2-11e9-8da2-4596b38eb6c2.png) 
 
- 
- 
+  
 Give a name to the role and add this role to the Instance you are launching.
 On the running EC2 instance you can manually verify that the instance has inherited the correct role by running the following command:
 
- 
-
-
-
-
+ ![image](https://user-images.githubusercontent.com/46320181/55561600-b9c0b780-56f2-11e9-9816-18eafd2328e5.png)
 
 Running the following command lists the defined registries.
 
- 
+ ![image](https://user-images.githubusercontent.com/46320181/55561612-bd543e80-56f2-11e9-9f8a-1d8802aa53b6.png)
 
 Add a repository to the Anchore Engine:
- 
+ ![image](https://user-images.githubusercontent.com/46320181/55561629-c2b18900-56f2-11e9-9484-271e5d1c2dc0.png)
 
 Add an image to the Anchore Engine:
-
+![image](https://user-images.githubusercontent.com/46320181/55561656-d6f58600-56f2-11e9-84c1-359eea195693.png)
  
 # Errors:
 
 1)	Docker service need to be in running state on instance.
 
- 
+ ![image](https://user-images.githubusercontent.com/46320181/55561665-da890d00-56f2-11e9-94c2-251e7dafc051.png)
 
 2)	Images need to be add before passing the get parameter in command.
 
+![image](https://user-images.githubusercontent.com/46320181/55561674-df4dc100-56f2-11e9-82d3-717fd0338535.png)
+
  
 
 
-References:
+## References:
 
 https://anchore.com/blog/anchore-engine/
 https://github.com/anchore/anchore-engine
