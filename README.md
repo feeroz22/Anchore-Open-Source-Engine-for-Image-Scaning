@@ -162,13 +162,13 @@ Give a name to the role and add this role to the Instance you are launching.
 On the running EC2 instance you can manually verify that the instance has inherited the correct role by running the following command:
 
  ![image](https://user-images.githubusercontent.com/46320181/55561600-b9c0b780-56f2-11e9-9816-18eafd2328e5.png)
-
+ 
 Running the following command lists the defined registries.
 
  ![image](https://user-images.githubusercontent.com/46320181/55561612-bd543e80-56f2-11e9-9f8a-1d8802aa53b6.png)
 
 Add a repository to the Anchore Engine:
- ![image](https://user-images.githubusercontent.com/46320181/55561629-c2b18900-56f2-11e9-9484-271e5d1c2dc0.png)
+![image](https://user-images.githubusercontent.com/46320181/55704680-0c44f100-59dd-11e9-904a-675467674851.png)
 
 Add an image to the Anchore Engine:
 ![image](https://user-images.githubusercontent.com/46320181/55561656-d6f58600-56f2-11e9-84c1-359eea195693.png)
