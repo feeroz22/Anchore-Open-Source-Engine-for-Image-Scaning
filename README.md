@@ -12,19 +12,19 @@ Core Services
 -	Queuing Service
 -	Policy Engine Service
 -	Kubernetes Webhook Service
-Workers
--	Image Analyzer service
+* Workers
+	- Image Analyzer service
 ## Anchore Engine
 In short: a system to help automate the description and enforcement of requirements on the content of docker containers. With a bit more detail? Anchore Engine is a docker container static analysis and policy-based compliance tool that automates the inspection, analysis, and evaluation of images against user-defined checks to allow high confidence in container deployments by ensuring workload content meets the required criteria. Anchore Engine ultimately provides a policy evaluation result for each image: pass/fail against policies defined by the user. Additionally, the way that policies are defined and evaluated allows the policy evaluation itself to double as an audit mechanism that allows point-in-time evaluations of specific image properties and content attributes.
 ## How does it work
 Anchore takes a data-driven approach to analysis and policy enforcement. The system essentially has discrete phases for each image analyzed:
--		Fetch the image content and extract it, but never execute it
--		Analyze the image by running a set of Anchore analyzers over the image content to extract and classify as much metadata as possible
--		Save the resulting analysis in the database for future use and audit
--		Evaluate policies against the analysis result, including vulnerability matches on the artifacts discovered in the image.
--		Update to the latest external data used for policy evaluation and vulnerability matches (we call this external data sync a feed sync), and automatically update image analysis results against any new data found upstream.
--		Notify users of changes to policy evaluations and vulnerability matches
--		Repeat 5 & 6 on intervals to ensure latest external data and updated image evaluations
+1.		Fetch the image content and extract it, but never execute it
+2.		Analyze the image by running a set of Anchore analyzers over the image content to extract and classify as much metadata as possible
+3.	Save the resulting analysis in the database for future use and audit
+4.		Evaluate policies against the analysis result, including vulnerability matches on the artifacts discovered in the image.
+5.		Update to the latest external data used for policy evaluation and vulnerability matches (we call this external data sync a feed sync), and automatically update image analysis results against any new data found upstream.
+6.		Notify users of changes to policy evaluations and vulnerability matches
+7.		Repeat 5 & 6 on intervals to ensure latest external data and updated image evaluations
 ## Install Docker Compose
 On Linux, you can download the Docker Compose binary from the Compose repository release page on GitHub. Follow the instructions from the link, which involve running the curl command in your terminal to download the binaries. These step by step instructions are also included below.
 1.	Run this command to download the latest version of Docker Compose:
@@ -174,7 +174,7 @@ Add an image to the Anchore Engine:
 ![image](https://user-images.githubusercontent.com/46320181/55718721-af593300-59fc-11e9-9392-ab5135e7b35b.png)
 
  
-## Errors:
+### Errors:
 
 1)	Docker service need to be in running state on instance.
 
