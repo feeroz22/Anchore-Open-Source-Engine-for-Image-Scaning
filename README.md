@@ -27,8 +27,7 @@ Anchore takes a data-driven approach to analysis and policy enforcement. The sys
 ### Install Docker Compose
 On Linux, you can download the Docker Compose binary from the Compose repository release page on GitHub. Follow the instructions from the link, which involve running the curl command in your terminal to download the binaries. These step by step instructions are also included below.
 1. Run this command to download the latest version of Docker Compose:
- 
-The above command is an example, and it may become out-of-date. To ensure you have the latest version, check the Compose repository release page on GitHub.
+ The above command is an example, and it may become out-of-date. To ensure you have the latest version, check the Compose repository release page on GitHub.
 If you have problems installing with curl, see Alternative Install Options tab above.
 2. Apply executable permissions to the binary:
  
@@ -86,8 +85,8 @@ Once installed the anchore-cli utility has been installed you may need to adjust
 The install location is system dependent, governed by PIP and may vary based the distribution on which you are running.
 The most common default locations are:
 
-- Apple macOS: $HOME/Library/Python/2.7/bin
-- Linux: $/HOME/.local/bin
+<dt> Apple macOS: $HOME/Library/Python/2.7/bin </dt>
+<dt> Linux: $/HOME/.local/bin </dt>
 
  
 
@@ -122,18 +121,19 @@ Rather than passing command line parameters for every call to the Anchore CLI th
 
 
 ### Scanning Images on Amazon Elastic Container Registry (ECR)
-Amazon AWS typically uses keys instead of traditional usernames & passwords. These keys consist of an access key ID and a secret access key. While it is possible to use the aws ecr get-login command to create an access token, this will expire after 12 hours so it is not appropriate for use with Anchore Engine, otherwise a user would need to update their registry credentials regularly. So when adding an Amazon ECR registry to Anchore Engine you should pass the aws_access_key_id and aws_secret_access_key. 
--	For example:
-$ anchore-cli registry add /
-             1234567890.dkr.ecr.us-east-1.amazonaws.com /
-             MY_AWS_ACCESS_KEY_ID /
-             MY_AWS_SECRET_ACCESS_KEY /
-             --registry-type=awsecr
-The registry-type parameter instructs Anchore Engine to handle these credentials as AWS credentials rather than traditional usernames and passwords. Currently the Anchore Engine supports two types of registry authentication standard username and password for most Docker V2 registries and Amazon ECR. In this example we specified the registry type on the command line however if this parameter is omitted then the CLI will attempt to guess the registry type from the URL which uses a standard format.
-The Anchore Engine will use the AWS access key and secret access keys to generate authentication tokens to access the Amazon ECR registry, the Anchore Engine will manage regeneration of these tokens which typically expire after 12 hours.
-In addition to supporting AWS access key credentials Anchore also supports the use of IAM roles for authenticating with Amazon ECR if the Anchore Engine is run on an EC2 instance.
-In this case you can configure the Anchore Engine to inherit the IAM role from the EC2 instance hosting the engine.
-When launching the EC2 instance that will run the Anchore Engine you need to specify a role that includes the AmazonEC2ContainerRegistryReadOnly policy.
+<dt>Amazon AWS typically uses keys instead of traditional usernames & passwords. These keys consist of an access key ID and a secret access key. While it is possible to use the aws ecr get-login command to create an access token, this will expire after 12 hours so it is not appropriate for use with Anchore Engine, otherwise a user would need to update their registry credentials regularly.</dt> 
+So when adding an Amazon ECR registry to Anchore Engine you should pass the aws_access_key_id and aws_secret_access_key. 
+<dt>For example: </dt>
+<dt> $ anchore-cli registry add / </dt>
+           <dt>  1234567890.dkr.ecr.us-east-1.amazonaws.com / </dt>
+           <dt>  MY_AWS_ACCESS_KEY_ID / </dt>
+            <dt> MY_AWS_SECRET_ACCESS_KEY / </dt>
+            <dt> --registry-type=awsecr </dt>
+<dt> The registry-type parameter instructs Anchore Engine to handle these credentials as AWS credentials rather than traditional usernames and passwords. Currently the Anchore Engine supports two types of registry authentication standard username and password for most Docker V2 registries and Amazon ECR. In this example we specified the registry type on the command line however if this parameter is omitted then the CLI will attempt to guess the registry type from the URL which uses a standard format.</dt>
+<dt> The Anchore Engine will use the AWS access key and secret access keys to generate authentication tokens to access the Amazon ECR registry, the Anchore Engine will manage regeneration of these tokens which typically expire after 12 hours.</dt>
+<dt> In addition to supporting AWS access key credentials Anchore also supports the use of IAM roles for authenticating with Amazon ECR if the Anchore Engine is run on an EC2 instance.</dt>
+<dt> In this case you can configure the Anchore Engine to inherit the IAM role from the EC2 instance hosting the engine.</dt>
+<dt> When launching the EC2 instance that will run the Anchore Engine you need to specify a role that includes the AmazonEC2ContainerRegistryReadOnly policy.</dt>
 
 ![image](https://user-images.githubusercontent.com/46320181/55561569-a9104180-56f2-11e9-84e4-271df7f5fc3c.png)
 ![image](https://user-images.githubusercontent.com/46320181/55561583-ae6d8c00-56f2-11e9-981f-169c2b078cde.png)
